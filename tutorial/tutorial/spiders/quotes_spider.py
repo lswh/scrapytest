@@ -11,9 +11,12 @@ class AdstxtSpider(scrapy.Spider):
         
         # Get the file containing the URLs from Alexa's top 1 million list or other data source. 
         #fname = raw_input("Enter filename containing URLs:")
-        df=pd.read_csv('')
+        df=pd.read_csv('marfivedata.csv')
+
+        print(df)
 
         #Open the file and load as pandas dataframe?
+
 
         #For loop that each line containing the URL will be appended as a list item in urls
 
