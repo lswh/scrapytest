@@ -1,4 +1,5 @@
 import scrapy
+import pandas as pd
 
 
 class AdstxtSpider(scrapy.Spider):
@@ -9,6 +10,8 @@ class AdstxtSpider(scrapy.Spider):
         urls = []
         
         # Get the file containing the URLs from Alexa's top 1 million list or other data source. 
+        #fname = raw_input("Enter filename containing URLs:")
+        df=pd.read_csv('')
 
         #Open the file and load as pandas dataframe?
 
