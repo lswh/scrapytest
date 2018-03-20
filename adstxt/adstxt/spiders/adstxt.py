@@ -9,7 +9,7 @@ class AdstxtSpider(scrapy.Spider):
         with open("data1.txt") as file:
             for line in file: 
                 line = line.strip()
-                urls.append('http://'+line) 
+                urls.append('http://'+line+'/ads.txt') 
 
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
