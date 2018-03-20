@@ -1,33 +1,21 @@
 import scrapy
-import pandas as pd
 
 
-class AdstxtSpider(scrapy.Spider):
-    name = "adstxt"
+class QuotesSpider(scrapy.Spider):
+    name = "quotes"
 
     def start_requests(self):
-        #Initialize empty array urls for URL listing from the domains to be tested. 
-        urls = []
-        
-        # Get the file containing the URLs from Alexa's top 1 million list or other data source. 
-        #fname = raw_input("Enter filename containing URLs:")
-        df=pd.read_csv('marfivedata.csv')
-
-        print(df)
-
-        #Open the file and load as pandas dataframe?
-
-
-        #For loop that each line containing the URL will be appended as a list item in urls
-
-
-
+        urls = [
+            'http://quotes.toscrape.com/page/1/',
+            'http://quotes.toscrape.com/page/2/',
+        ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
         page = response.url.split("/")[-2]
-        filename = '%s.html' % page
+        filename = 'quotes-%s.html' % page
         with open(filename, 'wb') as f:
             f.write(response.body)
         self.log('Saved file %s' % filename)
+
