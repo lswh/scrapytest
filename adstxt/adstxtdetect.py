@@ -20,15 +20,15 @@ for website in editFiles:
 	with open(website) as f:
 	   for line in f:
 	       if 'DIRECT' in line:
-	           print f.name
+	           print(f.name)
 	           AdsTxtPositive.append(f.name+',Y')
 	           break
 	       elif 'RESELLER' in line:
-	           print f.name
+	           print(f.name)
 	           AdsTxtPositive.append(f.name+',Y')
 	           break
 	       else:
-	       	   print f.name+'noncompliant'
+	       	   print(f.name+'noncompliant')
 	       	   AdsTxtPositive.append(f.name+',N')
 	           break
 	   f.close
