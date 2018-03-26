@@ -11,7 +11,7 @@ editFiles = []
 for item in dirListing:
 	if ".html" in item:
 		editFiles.append(item)
-print editFiles
+print(editFiles)
 
 # Checks for common words DIRECT and RESELLER present on ads.txt file. 
 AdsTxtPositive = []
@@ -20,15 +20,15 @@ for website in editFiles:
 	with open(website) as f:
 	   for line in f:
 	       if 'DIRECT' in line:
-	           print f.name
+	           print(f.name)
 	           AdsTxtPositive.append(f.name+',Y')
 	           break
 	       elif 'RESELLER' in line:
-	           print f.name
+	           print(f.name)
 	           AdsTxtPositive.append(f.name+',Y')
 	           break
 	       else:
-	       	   print f.name+'noncompliant'
+	       	   print(f.name+'noncompliant')
 	       	   AdsTxtPositive.append(f.name+',N')
 	           break
 	   f.close
