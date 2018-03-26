@@ -11,7 +11,7 @@ editFiles = []
 for item in dirListing:
 	if ".html" in item:
 		editFiles.append(item)
-print editFiles
+print(editFiles)
 
 # Checks for common words DIRECT and RESELLER present on ads.txt file. 
 AdsTxtPositive = []
