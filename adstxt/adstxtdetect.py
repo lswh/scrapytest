@@ -21,16 +21,20 @@ for website in editFiles:
 	   for line in f:
 	       if 'DIRECT' in line:
 	           print f.name
-	           AdsTxtPositive.append(f.name)
+	           AdsTxtPositive.append(f.name+',Y')
 	           break
 	       elif 'RESELLER' in line:
 	           print f.name
-	           AdsTxtPositive.append(f.name)
+	           AdsTxtPositive.append(f.name+',Y')
+	           break
+	       else:
+	       	   print f.name+'noncompliant'
+	       	   AdsTxtPositive.append(f.name+',N')
 	           break
 	   f.close
 
 
-woohoo = open('000_ADSTEXT POSITIVE DOMAINS.txt', 'w')
+woohoo = open('000_Domains.txt', 'w')
 
 for item in AdsTxtPositive:
 	woohoo.write("%s\n" %item)
