@@ -6,7 +6,7 @@ class AdstxtSpider(scrapy.Spider):
     def  start_requests(self):
 
         urls=[]
-        with open("xer") as file:
+        with open("xef") as file:
             for line in file: 
                 line = line.strip()
                 urls.append('http://'+line+'/ads.txt') 
